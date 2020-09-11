@@ -1,4 +1,4 @@
-Laravel Commands
+Laravel command
 --------------------------
 A simple laravel command
 
