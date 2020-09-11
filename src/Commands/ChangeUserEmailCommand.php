@@ -5,21 +5,21 @@ namespace Asorasoft\Command\Commands;
 use App\Models\User;
 use Illuminate\Console\Command;
 
-class ChangeUserPasswordCommand extends Command
+class ChangeUserEmailCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'asorasoft:user:change-password';
+    protected $signature = 'asorasoft:user:change-email';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Change user password';
+    protected $description = 'Change user email';
 
     /**
      * Create a new command instance.
@@ -38,10 +38,10 @@ class ChangeUserPasswordCommand extends Command
      */
     public function handle()
     {
-        return $this->changeUserPassword();
+        $this->changeUserEmail();
     }
 
-    private function changeUserPassword()
+    private function changeUserEmail()
     {
         $id = $this->ask('User ID');
         $user = User::find($id);
@@ -49,11 +49,11 @@ class ChangeUserPasswordCommand extends Command
             $this->table(['ID', 'Name', 'E-Mail Address'], [
                 [$user->id, $user->name, $user->email]
             ]);
-            $password = $this->secret('Enter new password');
+            $email = $this->ask('Enter new email');
             $user->update([
-                'password' => bcrypt($password),
+                'email' => $email,
             ]);
-            $this->info('The user password has been updated successfully.');
+            $this->info('The user email has been updated successfully.');
         }
         $this->decide();
     }
@@ -61,7 +61,7 @@ class ChangeUserPasswordCommand extends Command
     private function decide()
     {
         if ($this->confirm('Do you wish to continue?')) {
-            $this->changeUserPassword();
+            $this->changeUserEmail();
         } else {
             $this->info('See you again!');
         }
