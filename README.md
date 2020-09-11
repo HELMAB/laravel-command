@@ -1,4 +1,4 @@
-Asorasoft Laravel Commands
+Laravel Commands
 --------------------------
 A simple laravel command
 
