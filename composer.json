@@ -1,0 +1,19 @@
+{
+    "name": "asorasoft/command",
+    "description": "Simple laravel command",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hel Mab",
+            "email": "mabhelitc@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Asorasoft\\Command\\": "src/"
+        }
+    }
+}
