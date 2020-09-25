@@ -4,6 +4,7 @@ namespace Asorasoft\Command;
 
 use Asorasoft\Command\Commands\ChangeUserEmailCommand;
 use Asorasoft\Command\Commands\ChangeUserPasswordCommand;
+use Asorasoft\Command\Commands\UserAccessControlListCommand;
 use Illuminate\Support\ServiceProvider;
 
 class AsorasoftCommandServiceProvider extends ServiceProvider
@@ -28,6 +29,7 @@ class AsorasoftCommandServiceProvider extends ServiceProvider
         $this->commands([
             ChangeUserPasswordCommand::class,
             ChangeUserEmailCommand::class,
+            UserAccessControlListCommand::class,
         ]);
     }
 }
