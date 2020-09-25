@@ -21,15 +21,13 @@ Your need to register the command service provider in `config/app.php` file.
 ## Available commands
 
 ```phpregexp
-php artisan asorasoft:user:change-password 
-php artisan asorasoft:user:change-email 
-php artisan asorasoft:user:where 
-php artisan asorasoft:user:roles 
-php artisan asorasoft:user:permissions 
-php artisan asorasoft:user:set-roles 
-php artisan asorasoft:user:set-permissions 
-php artisan asorasoft:user:revoke-roles 
-php artisan asorasoft:user:revoke-permissions 
+Which process? [List user]:
+  [0] List user
+  [1] List role
+  [2] List permission
+  [3] Change user's password
+  [4] Change E-mail address
+ > 
 ```
 
 ## License
